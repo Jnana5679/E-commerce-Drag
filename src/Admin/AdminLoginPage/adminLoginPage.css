@@ -1,0 +1,79 @@
+.admin-loginpage-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-login-form {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 20px 10px;
+  font-family: "Poppins";
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-login-form h1 {
+  text-align: center;
+  font-size: 20px;
+  color: rgba(102, 102, 196, 0.945);
+}
+
+.admin-password-input-container {
+  width: 100%;
+  display: flex;
+  border-bottom: 2px solid grey;
+}
+
+.admin-password-input {
+  outline: none;
+}
+
+.admin-password-input:focus {
+  border-bottom: 3px solid black;
+}
+
+.admin-login-input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.admin-login-input-container label {
+  margin: 10px 0;
+  user-select: none;
+}
+
+.admin-username-input {
+  border-bottom: 2px solid grey;
+  outline: none;
+  padding: 5px 0;
+}
+
+.admin-username-input:focus {
+  border-bottom: 3px solid black;
+}
+
+.admin-login-button {
+  width: 100px;
+  margin: 20px 0;
+  background-color: rgba(102, 102, 196, 0.945);
+  padding: 5px 10px;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 5px;
+  align-self: center;
+}
+
+.admin-password-show-button {
+  background-color: rgba(175, 156, 156, 0.795);
+  border: none;
+  border-radius: 5px;
+  padding: 2px 2px;
+  cursor: pointer;
+  margin-bottom: 2px;
+  width: 60px;
+}

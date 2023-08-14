@@ -1,0 +1,123 @@
+.customer-login-page-container {
+  background-color: rgba(248, 114, 114, 0.76);
+  background-image: url("../../images/263142.png");
+  background-size: 50px;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customer-login-form {
+  background-color: #fffffffa;
+  border: 2px solid grey;
+  border-radius: 10px;
+  padding: 30px 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.customer-login-form h1 {
+  font-family: "Poppins";
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+  color: rgba(102, 102, 196, 0.945);
+}
+
+.user-input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.user-input-container label {
+  font-family: "Poppins";
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 15px;
+  margin: 5px 0;
+  color: rgba(102, 102, 196, 0.945);
+}
+
+.user-input-container input {
+  border-bottom: 2px solid grey;
+  height: 50px;
+  outline: none;
+  font-family: "Poppins";
+  color: rgb(90, 90, 90);
+  background-color: transparent;
+}
+
+.user-input-container input:focus {
+  border-bottom: 3px solid black;
+}
+
+.error-box {
+  border: 2px solid red;
+}
+
+.error-message {
+  font-family: "Poppins";
+  color: red;
+}
+
+.checkbox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+.checkbox input {
+  margin-right: 10px;
+}
+
+.checkbox label {
+  font-family: "Poppins";
+  font-weight: 400;
+}
+
+.login-button {
+  background-color: rgba(102, 102, 196, 0.945);
+  color: #ffffff;
+  font-family: "Poppins";
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: 600;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.or-separation {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins";
+  margin: 10px 0;
+}
+
+.or-separation hr {
+  border: 1px solid rgba(102, 102, 196, 0.945);
+  width: 40%;
+}
+
+.alternate-login-methods {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.new-user-text {
+  font-family: "Poppins";
+}
+
+.new-user-text span {
+  color: blue;
+  cursor: pointer;
+}

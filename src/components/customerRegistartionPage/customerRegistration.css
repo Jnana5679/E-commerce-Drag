@@ -1,0 +1,127 @@
+.customer-registration-container {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  padding: 10px 10px;
+  margin: 10px 0;
+  background-image: url("https://res.cloudinary.com/dwsedmm9n/image/upload/v1691661057/empty-shopping-cart-pink-background-advertising-copy-space_70287-2251_ivmohy.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.customer-registration-form {
+  border: 2px solid grey;
+  border-radius: 10px;
+  padding: 30px 15px;
+  font-family: "Poppins";
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(4px);
+  background-color: transparent;
+}
+
+.customer-registration-form h1 {
+  user-select: none;
+  text-align: center;
+  margin: 20px 0;
+  color: rgba(102, 102, 196, 0.945);
+}
+
+.customer-input-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.customer-input-container label {
+  user-select: none;
+  margin: 5px 0;
+}
+
+.customer-input-container input {
+  border-bottom: 2px solid rgb(24, 22, 22);
+  outline: none;
+  padding: 5px 0;
+  background-color: transparent;
+  color: black;
+  font-family: "Poppins";
+}
+
+.customer-input-container input::placeholder {
+  color: #1d1b1b;
+}
+
+.customer-input-container input:focus {
+  transition: 0.2s;
+  border-bottom: 3px solid black;
+}
+
+.confirm-password-container {
+  width: 100%;
+  display: flex;
+  border-bottom: 2px solid grey;
+  padding: 5px 0;
+}
+
+.confirm-password-container input {
+  width: 100%;
+  border: none;
+}
+
+.confirm-password-container button {
+  background-color: rgba(128, 128, 128, 0.534);
+  padding: 2px 3px;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 60px;
+}
+
+.sign-up-button {
+  background-color: rgba(102, 102, 196, 0.945);
+  color: #ffffff;
+  font-family: "Poppins";
+  padding: 5px 10px;
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  font-weight: 600;
+  margin: 10px 0;
+  cursor: pointer;
+  margin: 20px 0;
+  user-select: none;
+}
+
+.redirect-to-link-text span {
+  color: blue;
+  cursor: pointer;
+  user-select: none;
+}
+
+.registration-error-box {
+  border: 2px solid red !important;
+  border-radius: 5px;
+}
+
+.registration-success-box {
+  border: 2px solid rgb(2, 255, 23) !important;
+}
+
+.important-msg {
+  font-family: "Poppins";
+  color: red;
+}
+
+.success-registration-page {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Poppins";
+}
+
+.link {
+  color: blue;
+  text-decoration: underline;
+}

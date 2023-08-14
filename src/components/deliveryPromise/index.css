@@ -1,0 +1,26 @@
+.brand-container {
+  width: 95vw;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.brand-container h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.delivery-time-icon {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delivery-time-icon p {
+  font-weight: bold;
+  color: rgb(185, 34, 34);
+}
+
+.lightning-icon {
+  color: rgb(185, 34, 34);
+}

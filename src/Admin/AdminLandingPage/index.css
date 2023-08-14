@@ -1,0 +1,57 @@
+.admin-landing-page {
+  background-image: url("https://res.cloudinary.com/dwsedmm9n/image/upload/v1691651217/1_3Rip2_wwGhuKve6J1Diz1g_nrwdti.webp");
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.admin-landing-button {
+  width: 200px;
+  padding: 10px 5px;
+  border-radius: 5px;
+  border: 2px solid black;
+  color: rgb(6, 6, 7);
+  font-family: "Poppins";
+  font-size: 20px;
+  background-color: rgba(240, 248, 255, 0.342);
+  backdrop-filter: blur(3px);
+  margin: 20px 0;
+}
+
+.admin-landing-button:hover {
+  color: aliceblue;
+  border: 2px solid aliceblue;
+}
+
+.admin-landing-page-buttons {
+  display: flex;
+  flex-direction: column;
+  height: 120vh;
+  justify-content: center;
+}
+
+/* .admin-full-name {
+  align-self: flex-start;
+  width: 100vw;
+}
+
+.admin-greetings {
+  align-self: flex-start;
+} */
+
+.admin-greetings-container {
+  align-self: flex-start;
+  margin-top: 50px;
+  width: 100vw;
+  padding: 20px 5px;
+}
+
+.admin-greetings-container h1 {
+  color: rgb(25, 48, 68);
+  font-family: "Poppins";
+  font-size: 300%;
+  font-weight: 600;
+}

@@ -1,0 +1,34 @@
+.category-list-items-container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.category-list-items {
+  width: 100vw;
+  display: flex;
+  margin: 20px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.shop-by-category-container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-by-category-container hr {
+  border: 1px solid red;
+  width: 20%;
+  margin: 0 10px;
+}
+
+.category-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  text-align: center;
+}

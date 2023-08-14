@@ -1,0 +1,15 @@
+.sale-banner {
+  background-image: url("../../images/Screenshot\ from\ 2023-08-01\ 16-49-35.png");
+  width: 95vw;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sale-banner button {
+  height: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
