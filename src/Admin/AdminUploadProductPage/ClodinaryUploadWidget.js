@@ -80,7 +80,7 @@ class CloudinaryUploadWidget extends Component {
             },
           }
         );
-        filesUrlObject["productImageUrl" + [i + 1]] = response.data.secure_url;
+        filesUrlObject["productImageUrl"] = response.data.secure_url;
         this.setState({ progress: 0, showProgressBar: false });
       }
 

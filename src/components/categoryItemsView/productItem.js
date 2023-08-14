@@ -8,15 +8,16 @@ const ProductItem = (props) => {
     productImageUrls,
     productPrice,
     productQuantity,
+    _id,
   } = eachProductDetails;
 
   return (
-    <li className="product-item-container">
-      <Link to={`/product/${brandName}_${productName}`}>
-        <button className="product-item-list-button">
+    <Link to={`/product/${brandName}-${productName}?product_id=${_id}`}>
+      <li className="product-item-container">
+        <div className="product-item-list-button">
           <img
             className="product-item-image"
-            src={productImageUrls.productImageUrl1}
+            src={productImageUrls[0]["productImageUrl"]}
             alt={productName}
           />
           <p className="product-item-brand">{brandName}</p>
@@ -26,9 +27,9 @@ const ProductItem = (props) => {
             <p className="product-price">{productPrice}</p>
             <button className="add-container-button">Add</button>
           </div>
-        </button>
-      </Link>
-    </li>
+        </div>
+      </li>
+    </Link>
   );
 };
 

@@ -11,6 +11,7 @@ import AdminLandingPage from "./Admin/AdminLandingPage/adminLandingPage";
 import AdminUploadProductPage from "./Admin/AdminUploadProductPage/adminUploadProduct";
 import UpdateDeals from "./Admin/AdminUpdateDeals/updateDeals";
 import AdminProtectedRoute from "./Admin/AdminProtectedRoute/protectedRoute";
+import ProductItemView from "./components/eachProductView/eachProductView";
 
 import "./App.css";
 
@@ -32,6 +33,7 @@ class App extends Component {
           path="/successfull-registration"
           component={SuccessfullUserRegistration}
         />
+        <Route exact path="/product/:id1" component={ProductItemView} />
         <AdminProtectedRoute
           exact
           path="/admin/Landing-page"

@@ -30,9 +30,9 @@ class CategoryItemsViewPage extends Component {
     const { categoryId } = this.state;
     let getProductsApiUrl;
     if (window.innerWidth < 600) {
-      getProductsApiUrl = `http://192.168.1.11:3005/get-product-by-category/?productCategory=${categoryId}`;
+      getProductsApiUrl = `http://192.168.1.11:3005/get-products-list-by-category/?productCategory=${categoryId}`;
     } else {
-      getProductsApiUrl = `http://localhost:3005/get-product-by-category/?productCategory=${categoryId}`;
+      getProductsApiUrl = `http://localhost:3005/get-products-list-by-category/?productCategory=${categoryId}`;
     }
     const options = {
       method: "GET",
@@ -55,7 +55,8 @@ class CategoryItemsViewPage extends Component {
         <div className="selected-category-items-view-title">
           <hr />
           <h1>
-            {categoryName} ({productsListFromDb.length} Items)
+            {categoryName.replace("%20", " ")} ({productsListFromDb.length}{" "}
+            Items)
           </h1>
           <hr />
         </div>
