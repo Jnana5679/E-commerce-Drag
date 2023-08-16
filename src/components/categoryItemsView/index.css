@@ -87,16 +87,10 @@
 }
 
 .product-item-price-add-button {
-  width: 130px;
+  width: 100%;
   position: relative;
-  top: 30px;
+  top: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.add-container-button {
-  border: 1px solid rgb(226, 88, 88);
-  padding: 2px 5px;
-  border-radius: 5px;
 }

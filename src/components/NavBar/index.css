@@ -6,3 +6,9 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.cart-profile-dropdown-container {
+  display: flex;
+  align-self: center;
+  align-items: center;
+}

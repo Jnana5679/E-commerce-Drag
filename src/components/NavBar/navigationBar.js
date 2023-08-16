@@ -1,5 +1,6 @@
 import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
 import ProfileDropDown from "../UserDetailsDrawer/index";
+import CartButton from "../cartButton/cartButton";
 import "./index.css";
 
 const NavigationBar = (props) => {
@@ -14,7 +15,10 @@ const NavigationBar = (props) => {
       <button type="button" onClick={onClickHomeButton}>
         Home
       </button>
-      <ProfileDropDown />
+      <div className="cart-profile-dropdown-container">
+        <CartButton />
+        <ProfileDropDown />
+      </div>
     </div>
   );
 };

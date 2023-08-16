@@ -6,7 +6,11 @@ import AddQuantity from "../addButton/addQuantity";
 import EachProductViewNavBar from "./eachProductViewNavBar";
 
 class ProductItemView extends Component {
-  state = { productDetails: [], selectedImageUrl: "", productImagesList: [] };
+  state = {
+    productDetails: [],
+    selectedImageUrl: "",
+    productImagesList: [],
+  };
 
   componentDidMount = () => {
     const { location } = this.props;
@@ -73,7 +77,7 @@ class ProductItemView extends Component {
             <h1>{productPrice}</h1>
           </div>
           <div className="each-product-add-quantity-container">
-            <AddQuantity />
+            <AddQuantity productDetails={productDetails} />
           </div>
         </div>
         <div className="each-product-description">

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import AddQuantity from "../addButton/addQuantity";
 
 const ProductItem = (props) => {
   const { eachProductDetails } = props;
@@ -25,7 +26,6 @@ const ProductItem = (props) => {
           <p className="product-item-quantity">{productQuantity}</p>
           <div className="product-item-price-add-button">
             <p className="product-price">{productPrice}</p>
-            <button className="add-container-button">Add</button>
           </div>
         </div>
       </li>
