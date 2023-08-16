@@ -90,7 +90,7 @@ class AdminUploadProductPage extends Component {
     this.setState({ productQuantity: value });
   };
 
-  onUpload = (imageUrlObject) => {
+  onUpload = (filesUrlArray) => {
     const {
       productName,
       productBrand,
@@ -109,7 +109,7 @@ class AdminUploadProductPage extends Component {
       productPrice: "Rs " + productPrice,
       productDiscount: productDiscount,
       productDescription: productDescription,
-      productImageUrls: imageUrlObject,
+      productImageUrls: filesUrlArray,
     };
 
     this.uploadProductDataToDataBase(productDetails);

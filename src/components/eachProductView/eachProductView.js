@@ -1,13 +1,16 @@
 import { Component } from "react";
+import "./index.css";
+
+import ImageCarousel from "./eachProductDetails";
+import AddQuantity from "../addButton/addQuantity";
+import EachProductViewNavBar from "./eachProductViewNavBar";
 
 class ProductItemView extends Component {
-  state = { productDetails: [] };
+  state = { productDetails: [], selectedImageUrl: "", productImagesList: [] };
 
   componentDidMount = () => {
-    const { location, match } = this.props;
-    const { params } = match;
+    const { location } = this.props;
     const { search } = location;
-    const { id1 } = params;
     this.getProductDetailsApiCall(search.slice(12));
   };
 
@@ -23,29 +26,59 @@ class ProductItemView extends Component {
     };
     const response = await fetch(getProductApi, options);
     const data = await response.json();
-    this.setState({ productDetails: data["productDetails"][0] });
+    this.setState({
+      productDetails: data["productDetails"][0],
+      selectedImageUrl:
+        data["productDetails"][0]["productImageUrls"][0]["productImageUrl"],
+      productImagesList: data["productDetails"][0]["productImageUrls"],
+    });
+  };
+
+  updateSelectedImageUrl = (url) => {
+    this.setState({ selectedImageUrl: url });
   };
 
   render() {
-    const { productDetails } = this.state;
+    const { productDetails, selectedImageUrl, productImagesList } = this.state;
     const {
       brandName,
-      productCategory,
       productDescription,
-      productDiscount,
-      productImageUrls,
       productName,
       productPrice,
       productQuantity,
     } = productDetails;
-    console.log(productImageUrls);
     return (
-      <div>
-        <div>
-          <h1>{productName}</h1>
+      <div className="each-product-view-container">
+        <EachProductViewNavBar productName={productName} />
+        <div className="image-carousel-section">
+          <img
+            className="each-product-image"
+            src={selectedImageUrl}
+            alt={productName}
+          />
+          <ul className="image-carousel-buttons-list">
+            {productImagesList.map((eachImage) => (
+              <ImageCarousel
+                key={eachImage._id}
+                imagesUrlList={eachImage}
+                updateSelectedImageUrl={this.updateSelectedImageUrl}
+                isSelected={selectedImageUrl === eachImage.productImageUrl}
+              />
+            ))}
+          </ul>
+          <div className="each-product-details">
+            <p>{brandName}</p>
+            <h1>{productName}</h1>
+            <p>{productQuantity}</p>
+            <h1>{productPrice}</h1>
+          </div>
+          <div className="each-product-add-quantity-container">
+            <AddQuantity />
+          </div>
         </div>
-        <div>
-          <p>{brandName}</p>
+        <div className="each-product-description">
+          <h1>Product Description</h1>
+          <p>{productDescription}</p>
         </div>
       </div>
     );

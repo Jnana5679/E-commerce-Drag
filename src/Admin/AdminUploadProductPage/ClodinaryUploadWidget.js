@@ -57,7 +57,7 @@ class CloudinaryUploadWidget extends Component {
     ) {
       this.setState({ showError: true, errorMessage: "*No images uploaded" });
     } else {
-      var filesUrlObject = {};
+      var filesUrlArray = [];
       this.setState({ renderPleaseWait: true });
 
       for (var i = 0; i < this.state.filesUploaded.length; i++) {
@@ -80,12 +80,12 @@ class CloudinaryUploadWidget extends Component {
             },
           }
         );
-        filesUrlObject["productImageUrl"] = response.data.secure_url;
+        filesUrlArray.push({ productImageUrl: response.data.secure_url });
         this.setState({ progress: 0, showProgressBar: false });
       }
 
       this.setState({ showDone: true, renderPleaseWait: false });
-      onUpload(filesUrlObject);
+      onUpload(filesUrlArray);
     }
   };
 

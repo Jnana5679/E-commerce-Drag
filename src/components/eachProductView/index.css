@@ -1,0 +1,113 @@
+.each-product-view-container {
+  background-color: rgb(211, 200, 200);
+  width: 100vw;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Poppins";
+}
+
+.each-product-view-navbar {
+  width: 95vw;
+  background-color: red;
+  box-shadow: 1px 1px 10px 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0 10px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.arrow-button {
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+  outline: none;
+}
+
+.image-carousel-buttons-list {
+  list-style-type: none;
+  width: 95vw;
+  display: flex;
+  justify-content: center;
+}
+
+.image-carousel-buttons {
+  width: 70px;
+  height: 70px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.image-carousel-buttons img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.selected-button {
+  border: 2px solid rgb(235, 41, 41);
+  border-radius: 10px;
+}
+
+.each-product-image {
+  width: auto;
+  height: 500px;
+  max-height: 500px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .each-product-image {
+    height: 300px;
+  }
+}
+
+.image-carousel-section {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 10px 1px;
+  border-radius: 10px;
+  width: 95vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 5px;
+}
+
+.each-product-details {
+  align-self: flex-start;
+  margin: 20px 0;
+}
+
+.each-product-details p {
+  font-weight: 300;
+  color: grey;
+  margin: 10px 0;
+}
+
+.each-product-description {
+  margin: 10px 0;
+  background-color: rgb(255, 255, 255);
+  width: 95vw;
+  border-radius: 10px;
+  padding: 10px 15px;
+  box-shadow: 1px 1px 10px 1px;
+}
+
+.each-product-description p {
+  font-weight: 300;
+}
+
+.each-product-add-quantity-container {
+  align-self: flex-start;
+  width: 250px;
+}
+
+.each-product-view-arrow-and-name {
+  display: flex;
+}

@@ -1,0 +1,33 @@
+.each-product-add-quantity {
+  align-self: flex-start;
+  display: flex;
+  justify-content: center;
+  width: 100px;
+  margin: 20px 0;
+  height: auto;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.decrement-button {
+  height: 100%;
+  width: 33px;
+  font-weight: 600;
+  color: rgb(2, 90, 2);
+}
+
+.quantity {
+  width: 33px;
+  display: flex;
+  justify-content: center;
+}
+
+.increment-button {
+  width: 33px;
+  font-weight: 600;
+  color: rgb(2, 90, 2);
+}
+
+.add-button {
+  color: rgb(2, 90, 2);
+}
