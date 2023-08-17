@@ -1,3 +1,4 @@
+import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
 import AddQuantity from "../addButton/addQuantity";
 import CartViewDeleteButton from "./deleteButton";
 
@@ -33,16 +34,29 @@ const CartItemView = (props) => {
     }
   };
 
+  const onClickEachCartItem = () => {
+    const { cartItem, history } = props;
+    const { brandName, _id, productName } = cartItem;
+    const productNameToLink = brandName + "-" + productName;
+    history.replace(`/product/${productNameToLink}?product_id=${_id}`);
+  };
+
   return (
     <div className="each-cart-item-container">
-      <button className="each-cart-item-image-button">
+      <button
+        onClick={onClickEachCartItem}
+        className="each-cart-item-image-button"
+      >
         <img
           className="each-cart-item-image"
           src={productImageUrls[0]["productImageUrl"]}
           alt={productName}
         />
       </button>
-      <button className="each-cart-item-product-details-button">
+      <button
+        onClick={onClickEachCartItem}
+        className="each-cart-item-product-details-button"
+      >
         <h1>
           {brandName} {productName}
         </h1>
@@ -59,4 +73,4 @@ const CartItemView = (props) => {
   );
 };
 
-export default CartItemView;
+export default withRouter(CartItemView);

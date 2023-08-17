@@ -1,36 +1,35 @@
-import { useState } from "react";
+import { Component } from "react";
 import "./index.css";
 
-const SearchBar = () => {
-  const [showSearchPopUp, setShowPopUpValue] = useState(false);
+class SearchBar extends Component {
+  state = { showSearchPopUp: false };
 
-  const onClickSearchBar = () => {
-    setShowPopUpValue(true);
+  onClickSearchBar = () => {
+    this.setState((prevState) => ({
+      showSearchPopUp: !prevState.showSearchPopUp,
+    }));
   };
 
-  const onClickCrossButton = () => {
-    setShowPopUpValue(false);
-  };
-
-  return (
-    <div>
-      <div className="search-box-container">
-        <input
-          onClick={onClickSearchBar}
-          type="search"
-          placeholder="Search For Coffee"
-          className="search-box"
-        />
-      </div>
-      {showSearchPopUp && (
-        <div className="search-result-container">
-          <div className="search-pop-up-close-button">
-            <button onClick={onClickCrossButton}>X</button>
-          </div>
+  render() {
+    const { showSearchPopUp } = this.state;
+    return (
+      <div>
+        <div className="search-box-container">
+          <input
+            onClick={this.onClickSearchBar}
+            type="search"
+            placeholder="Search For Coffee"
+            className="search-box"
+          />
         </div>
-      )}
-    </div>
-  );
-};
+        {showSearchPopUp && (
+          <div className="search-result-container">
+            <p>Hello</p>
+          </div>
+        )}
+      </div>
+    );
+  }
+}
 
 export default SearchBar;

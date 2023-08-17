@@ -190,6 +190,23 @@
   border-bottom: 2px dotted red;
 }
 
+.handling-fee-message {
+  font-weight: 300;
+  font-size: 10px;
+}
+
+.handling-fee-message-price {
+  font-size: 13px;
+  color: red;
+  font-weight: 500;
+}
+
+.handling-fee-offer {
+  font-size: 13px;
+  color: green;
+  font-weight: 500;
+}
+
 @media screen and (max-width: 600px) {
   .each-cart-item-container {
     height: 150px;

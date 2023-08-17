@@ -15,7 +15,7 @@ class CartView extends Component {
 
   onClickShopNowButton = () => {
     const { history } = this.props;
-    history.push("/");
+    history.replace("/");
   };
 
   renderNoItemsInCartPage = () => {

@@ -66,7 +66,15 @@ class TotalCartValueContainer extends Component {
                   </p>
                 </div>
                 <div>
-                  <h1>Handling Fee</h1>
+                  <h1>
+                    Handling Fee <br />
+                    <span className="handling-fee-message">
+                      (If cart value is more than{" "}
+                      <span className="handling-fee-message-price">₹149</span>,
+                      Handling fee is{" "}
+                      <span className="handling-fee-offer">₹ 0</span>)
+                    </span>
+                  </h1>
                   {totalValueOfCartBeforeDiscount < 149 ? (
                     <p>₹ 5</p>
                   ) : (
