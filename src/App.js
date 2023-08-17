@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 
@@ -20,6 +21,16 @@ import "./App.css";
 
 class App extends Component {
   state = { cartList: [] };
+
+  componentDidMount = () => {
+    const productDetailsFromStorage = JSON.parse(
+      localStorage.getItem("product-details")
+    );
+
+    if (productDetailsFromStorage !== null) {
+      this.setState({ cartList: productDetailsFromStorage });
+    }
+  };
 
   addCartItem = (productDetailsAddedToCart, productId) => {
     const { cartList } = this.state;
@@ -54,6 +65,7 @@ class App extends Component {
         })
       );
       productsToBeUpdatedToCart[0].push(productDetailsAddedToCart);
+      this.setState({ cartList: productsToBeUpdatedToCart[0] });
       localStorage.setItem(
         "product-details",
         JSON.stringify(...productsToBeUpdatedToCart)
@@ -61,11 +73,22 @@ class App extends Component {
     }
   };
 
-  deleteCartItem = () => {};
+  deleteCartItem = (productId) => {
+    const { cartList } = this.state;
+    const updatedCartList = cartList.filter((eachCartItem) => {
+      if (eachCartItem._id !== productId) {
+        return eachCartItem;
+      }
+    });
+    this.setState({ cartList: updatedCartList });
+    localStorage.removeItem("product-details");
+    if (updatedCartList[0] !== undefined) {
+      localStorage.setItem("product-details", JSON.stringify(updatedCartList));
+    }
+  };
 
   render() {
     const { cartList } = this.state;
-    console.log(cartList);
     return (
       <CartContext.Provider
         value={{

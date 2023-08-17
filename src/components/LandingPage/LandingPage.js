@@ -17,21 +17,7 @@ class LandingPage extends Component {
   state = { webPageStatus: pageStatus.initial };
 
   componentDidMount = () => {
-    this.setState({ webPageStatus: pageStatus.inProgress });
-    this.startOneSecTimer();
-  };
-
-  startOneSecTimer = () => {
-    let seconds = 0;
-
-    let timer = setInterval(() => {
-      if (seconds >= 1) {
-        clearInterval(timer);
-        this.setState({ webPageStatus: pageStatus.success });
-      } else {
-        seconds += 1;
-      }
-    }, 1000);
+    this.setState({ webPageStatus: pageStatus.success });
   };
 
   renderHomePage = () => {

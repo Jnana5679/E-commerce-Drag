@@ -3,6 +3,9 @@ import { BiArrowBack } from "react-icons/bi";
 import CartContext from "../../cartContext/cartContext";
 import CartItemView from "./cartItemView";
 import "./index.css";
+import TotalCartValueContainer from "./totalCartValueContainer";
+import IdontNeedABag from "./idontneedabag";
+import CancellationWarning from "./cancellationWarning";
 
 class CartView extends Component {
   onClickCartBackButton = () => {
@@ -10,11 +13,18 @@ class CartView extends Component {
     history.goBack();
   };
 
+  onClickShopNowButton = () => {
+    const { history } = this.props;
+    history.push("/");
+  };
+
   renderNoItemsInCartPage = () => {
     return (
-      <div>
+      <div className="cart-view-no-items">
         <h1>No item in cart</h1>
-        <button type="button">Shop Now</button>
+        <button onClick={this.onClickShopNowButton} type="button">
+          Shop Now
+        </button>
       </div>
     );
   };
@@ -27,6 +37,22 @@ class CartView extends Component {
           <CartItemView cartItem={eachCartItem} key={eachCartItem._id} />
         ))}
       </div>
+    );
+  };
+
+  renderCartViewDetails = (cartList) => {
+    return (
+      <>
+        <div className="i-dont-need-bag-container">
+          <IdontNeedABag />
+        </div>
+        <div className="bill-total-container">
+          <TotalCartValueContainer cartList={cartList} />
+        </div>
+        <div className="cancellation-warning-container">
+          <CancellationWarning />
+        </div>
+      </>
     );
   };
 
@@ -49,6 +75,7 @@ class CartView extends Component {
               {cartList.length === 0
                 ? this.renderNoItemsInCartPage()
                 : this.renderCartItems(cartList)}
+              {cartList.length !== 0 && this.renderCartViewDetails(cartList)}
             </div>
           );
         }}

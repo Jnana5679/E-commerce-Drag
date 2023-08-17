@@ -1,5 +1,5 @@
 import AddQuantity from "../addButton/addQuantity";
-import CartContext from "../../cartContext/cartContext";
+import CartViewDeleteButton from "./deleteButton";
 
 const CartItemView = (props) => {
   const { cartItem } = props;
@@ -11,24 +11,25 @@ const CartItemView = (props) => {
     productPrice,
     productDiscount,
     productQuantity,
+    quantity,
   } = cartItem;
 
   const renderDiscount = () => {
-    if (productDiscount !== 0) {
+    if (productDiscount !== "0") {
       const price = parseInt(productPrice.replace(" ", "").slice(2));
       const discountedPercentage = parseInt(productDiscount) / 100;
       const discountedPrice = price - price * discountedPercentage;
       return (
         <>
-          <p className="product-normal-price">₹ {price}</p>
+          <p className="product-normal-price">₹ {price * quantity}</p>
           <p className="product-discounted-price">
-            ₹ {Math.round(discountedPrice)}
+            ₹ {Math.round(discountedPrice) * quantity}
           </p>
         </>
       );
     } else {
       const price = parseInt(productPrice.replace(" ", "").slice(2));
-      return <p className="product-price">₹ {price}</p>;
+      return <p className="product-price">₹ {price * quantity}</p>;
     }
   };
 
@@ -42,17 +43,18 @@ const CartItemView = (props) => {
         />
       </button>
       <button className="each-cart-item-product-details-button">
-        <p>
+        <h1>
           {brandName} {productName}
-        </p>
+        </h1>
         <p className="each-cart-item-product-details-quantity">
           {productQuantity}
         </p>
       </button>
       <AddQuantity productDetails={cartItem} />
-      <div className="each-cart-item-price">
-        {productDiscount !== "0" ? <p>{renderDiscount()}</p> : ""}
+      <div className="cart-item-delete-button">
+        <CartViewDeleteButton productDetails={cartItem} />
       </div>
+      <div className="each-cart-item-price">{renderDiscount()}</div>
     </div>
   );
 };

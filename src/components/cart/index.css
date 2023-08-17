@@ -1,9 +1,24 @@
 .cart-container {
   width: 100vw;
+  height: 150vh;
+  background-color: rgb(220, 231, 241);
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: "Poppins";
+}
+
+.cart-view-no-items {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cart-view-no-items button {
+  background-color: orangered;
+  height: 40px;
+  border-radius: 5px;
 }
 
 .cart-navbar {
@@ -21,7 +36,7 @@
 
 .each-cart-item-container {
   width: 95vw;
-  background-color: aquamarine;
+  background-color: rgb(251, 255, 254);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -73,4 +88,118 @@
   font-weight: 300;
   color: grey;
   text-decoration: line-through;
+}
+
+.cart-item-delete-button {
+  position: absolute;
+  border: 1px solid black;
+  padding: 1px 2px;
+  font-size: 15px;
+  border-radius: 2px;
+  right: 100px;
+}
+
+.bill-total-container {
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.bill-details {
+  width: 95vw;
+  background-color: rgb(251, 255, 254);
+  border: 1px solid rgb(235, 221, 221);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.bill-details div {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.bill-details h1 {
+  color: rgb(145, 137, 137);
+}
+
+.item-savings {
+  color: green;
+}
+
+.to-pay-text {
+  color: black !important;
+}
+
+.i-dont-need-bag-container {
+  width: 95vw;
+  background-color: rgb(251, 255, 254);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.leaf-icon {
+  background-color: green;
+  color: rgb(251, 255, 254);
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.i-dont-need-bag-heading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.main-heading {
+  width: 100%;
+  display: flex;
+}
+
+.i-dont-need-bag-container p {
+  color: grey;
+  font-weight: 300;
+  margin: 10px 0;
+  width: 40%;
+}
+
+.cancellation-warning-container {
+  width: 95vw;
+  background-color: rgb(251, 255, 254);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 50px;
+}
+
+.cancellation-warning-container span {
+  color: red;
+  margin-right: 3px;
+}
+
+.cancellation-warning-container p {
+  font-weight: 300;
+}
+
+.cancellation-warning-container button {
+  color: red;
+  margin: 5px 0;
+  border-bottom: 2px dotted red;
+}
+
+@media screen and (max-width: 600px) {
+  .each-cart-item-container {
+    height: 150px;
+  }
+
+  .cart-item-delete-button {
+    bottom: 10px;
+    right: 10px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+  }
 }

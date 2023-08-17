@@ -4,15 +4,26 @@ import "./index.css";
 import ImageCarousel from "./eachProductDetails";
 import AddQuantity from "../addButton/addQuantity";
 import EachProductViewNavBar from "./eachProductViewNavBar";
+import RenderLoadingView from "../../additionalContent/renderLoadingView";
+import RenderFailureView from "../../additionalContent/renderFailurePage";
+
+const pageStatus = {
+  initial: "INITIAL",
+  success: "SUCCESS",
+  failure: "FAILURE",
+  inProgress: "IN_PROGRESS",
+};
 
 class ProductItemView extends Component {
   state = {
     productDetails: [],
     selectedImageUrl: "",
     productImagesList: [],
+    webPageStatus: pageStatus.initial,
   };
 
   componentDidMount = () => {
+    this.setState({ webPageStatus: pageStatus.inProgress });
     const { location } = this.props;
     const { search } = location;
     this.getProductDetailsApiCall(search.slice(12));
@@ -30,19 +41,20 @@ class ProductItemView extends Component {
     };
     const response = await fetch(getProductApi, options);
     const data = await response.json();
-    this.setState({
+    await this.setState({
       productDetails: data["productDetails"][0],
       selectedImageUrl:
         data["productDetails"][0]["productImageUrls"][0]["productImageUrl"],
       productImagesList: data["productDetails"][0]["productImageUrls"],
     });
+    this.setState({ webPageStatus: pageStatus.success });
   };
 
   updateSelectedImageUrl = (url) => {
     this.setState({ selectedImageUrl: url });
   };
 
-  render() {
+  renderSuccessView = () => {
     const { productDetails, selectedImageUrl, productImagesList } = this.state;
     const {
       brandName,
@@ -86,6 +98,25 @@ class ProductItemView extends Component {
         </div>
       </div>
     );
+  };
+
+  renderEachProductViewPage = () => {
+    const { webPageStatus } = this.state;
+
+    switch (webPageStatus) {
+      case pageStatus.success:
+        return this.renderSuccessView();
+      case pageStatus.inProgress:
+        return <RenderLoadingView />;
+      case pageStatus.failure:
+        return <RenderFailureView />;
+      default:
+        return null;
+    }
+  };
+
+  render() {
+    return this.renderEachProductViewPage();
   }
 }
 

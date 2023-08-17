@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import { Component } from "react";
 import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
 import "./index.css";
@@ -21,9 +22,7 @@ class AddQuantity extends Component {
     if (productDetailsInCart === null) {
       this.setState({ quantity: 0 });
     } else {
-      const { location, productDetails } = this.props;
-      const { search } = location;
-      const productId = search.slice(12);
+      const { productDetails } = this.props;
 
       const getProductById = productDetailsInCart.filter((eachProduct) => {
         if (eachProduct._id === productDetails._id) {
@@ -45,17 +44,13 @@ class AddQuantity extends Component {
     }));
   };
 
-  getProductId = () => {
-    console.log(this.props);
-  };
-
   render() {
     const { quantity, showError } = this.state;
     const { productDetails } = this.props;
     return (
       <CartContext.Consumer>
         {(value) => {
-          const { addCartItem } = value;
+          const { addCartItem, deleteCartItem } = value;
 
           const updateIncrementQuantity = () => {
             const { quantity } = this.state;
