@@ -3,9 +3,12 @@ import { BiArrowBack } from "react-icons/bi";
 import CartContext from "../../cartContext/cartContext";
 import CartItemView from "./cartItemView";
 import "./index.css";
+
 import TotalCartValueContainer from "./totalCartValueContainer";
 import IdontNeedABag from "./idontneedabag";
 import CancellationWarning from "./cancellationWarning";
+import PlaceOrderNow from "./placeOrderButton";
+import ApplyCoupon from "./ApplyCoupon";
 
 class CartView extends Component {
   onClickCartBackButton = () => {
@@ -32,6 +35,9 @@ class CartView extends Component {
   renderCartItems = (cartList) => {
     return (
       <div>
+        <div className="apply-coupon-container">
+          <ApplyCoupon />
+        </div>
         <h1>Review Items</h1>
         {cartList.map((eachCartItem) => (
           <CartItemView cartItem={eachCartItem} key={eachCartItem._id} />
@@ -51,6 +57,9 @@ class CartView extends Component {
         </div>
         <div className="cancellation-warning-container">
           <CancellationWarning />
+        </div>
+        <div className="place-order-now-button">
+          <PlaceOrderNow />
         </div>
       </>
     );

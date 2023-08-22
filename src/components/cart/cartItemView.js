@@ -57,7 +57,7 @@ const CartItemView = (props) => {
         onClick={onClickEachCartItem}
         className="each-cart-item-product-details-button"
       >
-        <h1>
+        <h1 className="cart-view-brand-name">
           {brandName} {productName}
         </h1>
         <p className="each-cart-item-product-details-quantity">

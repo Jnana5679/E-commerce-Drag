@@ -1,21 +1,22 @@
 /* eslint-disable array-callback-return */
 import { Component } from "react";
+import Cookies from "js-cookie";
 import CartContext from "../../cartContext/cartContext";
 
 class TotalCartValueContainer extends Component {
-  //   componentDidMount = (cartList) => {
-  //     this.setState({ totalValueOfCart: 0 });
-  //     cartList.map((eachCartItem) => {
-  //       this.setState((prevState) => ({
-  //         totalValueOfCart:
-  //           prevState.totalValueOfCart +
-  //           parseInt(
-  //             eachCartItem["productPrice"].slice(3) * eachCartItem.quantity
-  //           ),
-  //       }));
-  //     });
-  //     console.log(cartList);
-  //   };
+  state = { couponDiscount: 0 };
+
+  componentDidMount = () => {
+    const couponDiscount = Cookies.get("couponDiscount");
+    if (couponDiscount !== undefined) {
+      this.setState({ couponDiscount: couponDiscount });
+    }
+  };
+
+  getCounponDiscount = () => {
+    const { couponDiscount } = this.state;
+    return couponDiscount;
+  };
 
   render() {
     return (
@@ -47,7 +48,11 @@ class TotalCartValueContainer extends Component {
               );
               totalValueOfCartAfterDiscount += price * eachCartItem.quantity;
             }
+
+            Cookies.set("totalCartValue", totalValueOfCartBeforeDiscount);
           });
+
+          const getCouponDiscount = this.getCounponDiscount();
 
           return (
             <>
@@ -81,13 +86,24 @@ class TotalCartValueContainer extends Component {
                     <p>₹ 0</p>
                   )}
                 </div>
+                {getCouponDiscount > 0 && (
+                  <div>
+                    <h1>Coupon Discount</h1>
+                    <p className="item-savings">-{getCouponDiscount}</p>
+                  </div>
+                )}
                 <hr />
                 <div>
                   <h1 className="to-pay-text">To Pay</h1>
+                  <p className="strike-off">
+                    ₹ {totalValueOfCartBeforeDiscount}
+                  </p>
                   {totalValueOfCartBeforeDiscount < 149 ? (
-                    <p>₹ {totalValueOfCartAfterDiscount + 5}</p>
+                    <p>
+                      ₹ {totalValueOfCartAfterDiscount + 5 - getCouponDiscount}
+                    </p>
                   ) : (
-                    <p>₹ {totalValueOfCartAfterDiscount}</p>
+                    <p>₹ {totalValueOfCartAfterDiscount - getCouponDiscount}</p>
                   )}
                 </div>
               </div>

@@ -13,8 +13,9 @@ const ProductItem = (props) => {
   } = eachProductDetails;
 
   return (
-    <Link to={`/product/${brandName}-${productName}?product_id=${_id}`}>
-      <li className="product-item-container">
+    <li className="product-item-container">
+      <Link to={`/product/${brandName}-${productName}?product_id=${_id}`}>
+        {" "}
         <div className="product-item-list-button">
           <img
             className="product-item-image"
@@ -24,12 +25,13 @@ const ProductItem = (props) => {
           <p className="product-item-brand">{brandName}</p>
           <h1 className="product-item-name">{productName}</h1>
           <p className="product-item-quantity">{productQuantity}</p>
-          <div className="product-item-price-add-button">
-            <p className="product-price">{productPrice}</p>
-          </div>
+          <p className="product-price">{productPrice}</p>
         </div>
-      </li>
-    </Link>
+      </Link>
+      <div className="product-item-price-add-button">
+        <AddQuantity productDetails={eachProductDetails} />
+      </div>
+    </li>
   );
 };
 

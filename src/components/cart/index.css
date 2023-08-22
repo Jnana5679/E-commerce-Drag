@@ -1,11 +1,11 @@
 .cart-container {
   width: 100vw;
-  height: 150vh;
   background-color: rgb(220, 231, 241);
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: "Poppins";
+  padding-bottom: 70px;
 }
 
 .cart-view-no-items {
@@ -68,6 +68,11 @@
 .each-cart-item-product-details-quantity {
   font-weight: 300;
   color: grey;
+}
+
+.strike-off {
+  color: grey;
+  text-decoration: line-through;
 }
 
 .each-cart-item-add-button {
@@ -207,6 +212,49 @@
   font-weight: 500;
 }
 
+.place-order-now-button {
+  background-color: red;
+  width: 95vw;
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 10px;
+  outline: none;
+  border-radius: 5px;
+  color: aliceblue;
+}
+
+.apply-coupon-container {
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+
+.apply-coupon {
+  width: 95vw;
+  background-color: white;
+  height: 80px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.apply-coupon p {
+  font-weight: 300;
+}
+
+.apply-coupon-button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
 @media screen and (max-width: 600px) {
   .each-cart-item-container {
     height: 150px;
@@ -218,5 +266,9 @@
     font-size: 15px;
     border: none;
     outline: none;
+  }
+
+  .cart-view-brand-name {
+    width: 130px;
   }
 }

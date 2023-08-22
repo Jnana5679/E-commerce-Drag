@@ -14,6 +14,7 @@ import UpdateDeals from "./Admin/AdminUpdateDeals/updateDeals";
 import AdminProtectedRoute from "./Admin/AdminProtectedRoute/protectedRoute";
 import ProductItemView from "./components/eachProductView/eachProductView";
 import CartView from "./components/cart/cartView";
+import CouponsSection from "./components/cart/couponsSection";
 
 import CartContext from "./cartContext/cartContext";
 
@@ -114,6 +115,11 @@ class App extends Component {
           />
           <Route exact path="/product/:id1" component={ProductItemView} />
           <Route exact path="/customer/cart-view" component={CartView} />
+          <Route
+            exact
+            path="/customer/apply-coupons-section"
+            component={CouponsSection}
+          />
           <AdminProtectedRoute
             exact
             path="/admin/Landing-page"

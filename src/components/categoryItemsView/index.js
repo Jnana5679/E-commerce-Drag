@@ -76,14 +76,16 @@ class CategoryItemsViewPage extends Component {
           </h1>
           <hr />
         </div>
-        <ul className="product-item-list-container">
-          {productsListFromDb.map((eachProduct) => (
-            <ProductItem
-              key={eachProduct._id}
-              eachProductDetails={eachProduct}
-            />
-          ))}
-        </ul>
+        <div className="product-items-list-div">
+          <ul className="product-item-list-container">
+            {productsListFromDb.map((eachProduct) => (
+              <ProductItem
+                key={eachProduct._id}
+                eachProductDetails={eachProduct}
+              />
+            ))}
+          </ul>
+        </div>
       </div>
     );
   };

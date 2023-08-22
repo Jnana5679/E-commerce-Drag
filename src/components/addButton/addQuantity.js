@@ -71,19 +71,20 @@ class AddQuantity extends Component {
 
           const updateDecrementQuantity = () => {
             const { quantity } = this.state;
-            if (quantity > 0) {
+            if (quantity > 1) {
               this.setState((prevState) => ({
                 quantity: prevState.quantity - 1,
               }));
               this.setState({ showError: false, showAddButton: false });
+              const productDetailsAddedToCart = {
+                ...productDetails,
+                quantity: quantity - 1,
+              };
+              addCartItem(productDetailsAddedToCart, productDetails._id);
             } else {
-              this.setState({ showAddButton: true });
+              this.setState({ showAddButton: true, quantity: 0 });
+              deleteCartItem(productDetails._id);
             }
-            const productDetailsAddedToCart = {
-              ...productDetails,
-              quantity: quantity - 1,
-            };
-            addCartItem(productDetailsAddedToCart, productDetails._id);
           };
 
           return (

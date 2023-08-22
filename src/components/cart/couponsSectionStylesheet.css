@@ -1,0 +1,110 @@
+.coupons-section-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  font-family: "Poppins";
+  background-color: rgb(220, 231, 241);
+}
+
+.coupons-section-back-icon {
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  margin: 5px 0;
+}
+
+.coupons-section-nav {
+  background-color: white;
+  border-radius: 10px;
+  width: 100%;
+  padding: 5px 10px;
+  margin-bottom: 30px;
+}
+
+.coupon-error-message {
+  color: red;
+  font-size: 15px;
+}
+
+.coupons-section-nav h1 {
+  font-size: 23px;
+  margin-bottom: 50px;
+}
+
+.enter-coupon-code-box {
+  width: 100%;
+  height: 50px;
+  border: 1px solid grey;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2px;
+}
+
+.enter-coupon-code-box input[type="text"] {
+  width: 75%;
+  height: 99%;
+  border-radius: 10px;
+  padding-left: 3px;
+  background-color: transparent;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.enter-coupon-code-box input[type="text"]::placeholder {
+  text-transform: capitalize;
+}
+
+.coupon-apply-button {
+  width: 20%;
+  height: 100%;
+  font-size: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color: orangered;
+}
+
+.available-coupons-section-heading {
+  align-self: flex-start;
+  margin: 20px 0;
+}
+
+.available-coupon {
+  background-color: white;
+  padding: 10px 5px;
+  border-radius: 10px;
+}
+
+.available-coupon-first-half {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.horizontal-line {
+  border: 1px solid rgb(206, 202, 202);
+  margin: 20px 0;
+}
+
+.available-coupon-icon {
+  display: flex;
+  align-items: center;
+}
+
+.offer-icon {
+  color: orangered;
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.coupon-description {
+  font-size: 15px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
