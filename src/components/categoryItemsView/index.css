@@ -98,6 +98,6 @@
 
 .product-item-price-add-button {
   position: absolute;
-  bottom: -10px;
+  bottom: 10px;
   right: 5px;
 }
