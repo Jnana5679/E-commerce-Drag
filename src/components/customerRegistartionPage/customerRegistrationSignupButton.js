@@ -35,9 +35,9 @@ const SignupButton = (props) => {
   const callRegistrationApi = async () => {
     let registrationApiUrl;
     if (window.innerWidth <= 600) {
-      registrationApiUrl = "http://192.168.1.11:3005/user/register";
+      registrationApiUrl = `${process.env.REACT_APP_API_URL_KEY_SM}/user/register`;
     } else {
-      registrationApiUrl = "http://localhost:3005/user/register";
+      registrationApiUrl = `${process.env.REACT_APP_API_URL_KEY_BG}/user/register`;
     }
     const userData = JSON.stringify({
       firstname,

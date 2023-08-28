@@ -24,9 +24,9 @@ const AdminLoginButton = (props) => {
   const onClickAdminLoginButton = async () => {
     let adminLoginApiUrl;
     if (window.innerWidth <= 600) {
-      adminLoginApiUrl = "http://192.168.1.11:3005/admin/login";
+      adminLoginApiUrl = `${process.env.REACT_APP_API_URL_KEY_SM}/admin/login`;
     } else {
-      adminLoginApiUrl = "http://localhost:3005/admin/login";
+      adminLoginApiUrl = `${process.env.REACT_APP_API_URL_KEY_BG}/admin/login`;
     }
     const adminDetails = JSON.stringify({
       username: adminUsername,

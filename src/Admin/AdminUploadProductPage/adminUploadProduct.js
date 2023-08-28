@@ -118,9 +118,9 @@ class AdminUploadProductPage extends Component {
   uploadProductDataToDataBase = async (productDetails) => {
     let uploadApiUrl;
     if (window.innerWidth < 600) {
-      uploadApiUrl = "http://192.168.1.11:3005/product/upload";
+      uploadApiUrl = `${process.env.REACT_APP_API_URL_KEY_SM}/product/upload`;
     } else {
-      uploadApiUrl = "http://localhost:3005/product/upload";
+      uploadApiUrl = `${process.env.REACT_APP_API_URL_KEY_BG}/product/upload`;
     }
     const options = {
       method: "POST",

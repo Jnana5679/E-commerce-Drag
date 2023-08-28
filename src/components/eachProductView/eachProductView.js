@@ -32,9 +32,9 @@ class ProductItemView extends Component {
   getProductDetailsApiCall = async (search) => {
     let getProductApi;
     if (window.innerWidth < 600) {
-      getProductApi = `http://192.168.1.11:3005/get-product-by-name?product_id=${search}`;
+      getProductApi = `${process.env.REACT_APP_API_URL_KEY_SM}/get-product-by-name?product_id=${search}`;
     } else {
-      getProductApi = `http://localhost:3005/get-product-by-name?product_id=${search}`;
+      getProductApi = `${process.env.REACT_APP_API_URL_KEY_BG}/get-product-by-name?product_id=${search}`;
     }
     const options = {
       mathod: "GET",

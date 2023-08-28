@@ -24,9 +24,9 @@ const LoginButton = (props) => {
   const onClickLoginButton = async () => {
     let loginApiUrl;
     if (window.innerWidth < 600) {
-      loginApiUrl = "http://192.168.1.11:3005/user/login";
+      loginApiUrl = `${process.env.REACT_APP_API_URL_KEY_SM}/user/login`;
     } else {
-      loginApiUrl = "http://localhost:3005/user/login";
+      loginApiUrl = `${process.env.REACT_APP_API_URL_KEY_BG}/user/login`;
     }
     const userDetails = JSON.stringify({ username, password });
     const options = {

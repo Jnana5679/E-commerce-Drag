@@ -46,9 +46,9 @@ class CategoryItemsViewPage extends Component {
     const { categoryId } = this.state;
     let getProductsApiUrl;
     if (window.innerWidth < 600) {
-      getProductsApiUrl = `http://192.168.1.11:3005/get-products-list-by-category/?productCategory=${categoryId}`;
+      getProductsApiUrl = `${process.env.REACT_APP_API_URL_KEY_SM}/get-products-list-by-category/?productCategory=${categoryId}`;
     } else {
-      getProductsApiUrl = `http://localhost:3005/get-products-list-by-category/?productCategory=${categoryId}`;
+      getProductsApiUrl = `${process.env.REACT_APP_API_URL_KEY_BG}/get-products-list-by-category/?productCategory=${categoryId}`;
     }
     const options = {
       method: "GET",

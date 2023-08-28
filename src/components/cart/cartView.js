@@ -11,6 +11,12 @@ import PlaceOrderNow from "./placeOrderButton";
 import ApplyCoupon from "./ApplyCoupon";
 
 class CartView extends Component {
+  state = { placeOrderClicked: true };
+
+  updatePlaceOrderClicked = () => {
+    this.setState({ placeOrderClicked: true });
+  };
+
   onClickCartBackButton = () => {
     const { history } = this.props;
     history.goBack();
